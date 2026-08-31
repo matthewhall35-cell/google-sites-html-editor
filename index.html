@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sitecraft — Google Sites design studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="editor-controls.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Sitecraft home"><span class="brand-mark">S</span><span>sitecraft</span></a>
+      <div class="document-name"><span class="status-dot"></span><input id="project-name" value="Untitled project" aria-label="Project name" /></div>
+      <div class="top-actions"><button class="icon-button" id="undo-button" title="Undo" aria-label="Undo">↶</button><button class="icon-button" id="redo-button" title="Redo" aria-label="Redo">↷</button><button class="share-button" id="share-button">Share</button><button class="export-button" id="export-button">Export HTML <span>↗</span></button></div>
+    </header>
+
+    <main class="workspace">
+      <aside class="sidebar">
+        <div class="side-heading"><span>LAYERS</span><button id="add-section" aria-label="Add section">+</button></div>
+        <nav class="layers" id="layers">
+          <button class="layer active" data-section="hero"><span class="drag">⠿</span><span class="layer-icon">◇</span><span>Hero</span><span class="eye">◉</span></button>
+          <button class="layer" data-section="features"><span class="drag">⠿</span><span class="layer-icon">▦</span><span>Features</span><span class="eye">◉</span></button>
+          <button class="layer" data-section="quote"><span class="drag">⠿</span><span class="layer-icon">❞</span><span>Testimonial</span><span class="eye">◉</span></button>
+          <button class="layer" data-section="footer"><span class="drag">⠿</span><span class="layer-icon">—</span><span>Footer</span><span class="eye">◉</span></button>
+        </nav>
+        <div class="quick-add"><p>ADD ELEMENTS</p><div><button data-element="text">T <span>Text</span></button><button data-element="image">▧ <span>Image</span></button><button data-element="button">↗ <span>Button</span></button><button data-element="embed">&lt;/&gt; <span>Embed</span></button><button data-element="gallery">▦ <span>Gallery</span></button><button data-element="divider">— <span>Divider</span></button></div></div>
+        <div class="side-heading pages-heading"><span>PAGES</span><button id="add-page" aria-label="Add page">+</button></div>
+        <div id="pages-list"><div class="page active-page"><span>⌂</span> Home <span class="dots">•••</span></div><div class="page"><span>◇</span> About</div></div>
+        <div class="sidebar-footer"><button id="save-template">♡ Save as template</button><p>Changes saved automatically</p></div>
+      </aside>
+
+      <section class="stage-area">
+        <div class="stage-toolbar"><div class="device-switcher"><button class="selected" data-device="desktop">▰</button><button data-device="tablet">▯</button><button data-device="mobile">▯</button></div><span>Page preview</span><button class="preview-button" id="preview-button">↗ Preview</button></div>
+        <div class="canvas-wrap"><article class="site-canvas" id="site-canvas">
+          <section class="canvas-nav"><strong id="brand-text">Solace</strong><div><a href="#">Journal</a><a href="#">Studio</a><a href="#">About</a><button>Contact</button></div></section>
+          <section class="hero selected-section" id="hero"><div class="hero-copy"><p class="eyebrow editable" contenteditable="true">A slower kind of living</p><h1 class="editable" contenteditable="true">Make room for<br /><em>what matters.</em></h1><p class="hero-description editable" contenteditable="true">A considered collection of objects, rituals and stories for a life well lived.</p><a class="text-link editable" contenteditable="true">Explore the collection <span>→</span></a></div><div class="hero-art"><div class="sun"></div><div class="arch arch-back"></div><div class="arch arch-front"></div><div class="vase"><span></span></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div><p>EST. 2024<br />MADE WITH CARE</p></div></section>
+          <section class="features" id="features"><p class="eyebrow">THE SOLACE WAY</p><div class="feature-grid"><div><span>01</span><h2>Thoughtful<br />by nature.</h2><p>Objects that honour the materials they are made from.</p></div><div><span>02</span><h2>Made to<br />be kept.</h2><p>Designed for the everyday, made for a lifetime.</p></div><div><span>03</span><h2>Rooted in<br />ritual.</h2><p>Small gestures that make ordinary days feel special.</p></div></div></section>
+          <section class="quote" id="quote"><p>“The things we choose to live with should tell a story — not just fill a room.”</p><span>— MARA AINSWORTH, FOUNDER</span></section>
+          <footer id="footer"><strong>Solace</strong><span>© 2024 Solace Studio</span><span>Made slowly, with intention.</span></footer>
+        </article></div>
+      </section>
+
+      <aside class="inspector">
+        <div class="inspector-title"><span>DESIGN</span><button id="close-inspector">×</button></div>
+        <div class="selected-label"><span class="selection-icon">◇</span><div><b id="selected-name">Hero section</b><small>Section</small></div><button>•••</button></div>
+        <div class="panel-group"><label>LAYOUT</label><div class="layout-options"><button class="layout active">▣<small>Split</small></button><button class="layout">▤<small>Stack</small></button><button class="layout">▥<small>Full</small></button></div></div>
+        <div class="panel-group"><label>BACKGROUND</label><div class="color-row"><button class="swatch selected-swatch" data-color="#f1eee7" style="--swatch:#f1eee7"></button><button class="swatch" data-color="#e9dfd1" style="--swatch:#e9dfd1"></button><button class="swatch" data-color="#28372d" style="--swatch:#28372d"></button><button class="swatch" data-color="#bd7965" style="--swatch:#bd7965"></button><button class="add-swatch">+</button></div></div>
+        <div class="panel-group"><label>SPACING</label><div class="range-label"><span>Section height</span><output id="height-value">680 px</output></div><input id="height-range" type="range" min="520" max="820" value="680" /><div class="range-label"><span>Vertical padding</span><output>96 px</output></div><input type="range" min="48" max="160" value="96" /></div>
+        <div class="panel-group text-settings"><label>TYPOGRAPHY</label><select class="font-select" id="font-picker" aria-label="Google Font"><option value="Playfair Display">Playfair Display</option><option value="Manrope">Manrope</option><option value="DM Mono">DM Mono</option><option value="Lora">Lora</option><option value="Montserrat">Montserrat</option><option value="Roboto">Roboto</option><option value="Poppins">Poppins</option><option value="Merriweather">Merriweather</option></select><p class="font-note">Google Fonts</p><div class="type-controls"><div><small>SIZE</small><input id="type-size" type="number" value="64" min="24" max="100" /></div><div><small>WEIGHT</small><button>600⌄</button></div><div><small>LINE HEIGHT</small><button>1.05⌄</button></div></div></div>
+        <button class="delete-button" id="delete-section">⌫ Delete section</button>
+      </aside>
+    </main>
+    <div class="element-picker" id="element-picker" aria-hidden="true"><div class="picker-card" role="dialog" aria-modal="true" aria-labelledby="picker-title"><div class="picker-heading"><div><p>ADD TO PAGE</p><h2 id="picker-title">Choose an element</h2></div><button id="close-picker" aria-label="Close add elements">×</button></div><div class="element-options"><button data-element="text"><span class="element-icon">T</span><b>Text block</b><small>Add a heading and paragraph</small></button><button data-element="button"><span class="element-icon">↗</span><b>Call to action</b><small>Add a clickable button</small></button><button data-element="image"><span class="element-icon">▧</span><b>Image card</b><small>Upload an image from your computer</small></button><button data-element="embed"><span class="element-icon">&lt;/&gt;</span><b>Embed</b><small>Add a Google Drive or web link</small></button><button data-element="gallery"><span class="element-icon">▦</span><b>Gallery</b><small>Add a visual content grid</small></button><button data-element="divider"><span class="element-icon">—</span><b>Divider</b><small>Separate page content</small></button></div></div></div>
+    <div class="toast" id="toast" role="status">HTML export downloaded</div>
+    <script src="app.js"></script>
+  </body>
+</html>
