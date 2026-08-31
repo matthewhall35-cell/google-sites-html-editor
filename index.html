@@ -8,12 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="editor-controls.css" />
   </head>
   <body>
     <header class="topbar">
       <a class="brand" href="#" aria-label="Sitecraft home"><span class="brand-mark">S</span><span>sitecraft</span></a>
       <div class="document-name"><span class="status-dot"></span><input id="project-name" value="Untitled project" aria-label="Project name" /></div>
-      <div class="top-actions"><button class="icon-button" id="undo-button" title="Undo" aria-label="Undo">↶</button><button class="icon-button" id="redo-button" title="Redo" aria-label="Redo">↷</button><button class="share-button">Share</button><button class="export-button" id="export-button">Export HTML <span>↗</span></button></div>
+      <div class="top-actions"><button class="icon-button" id="undo-button" title="Undo" aria-label="Undo">↶</button><button class="icon-button" id="redo-button" title="Redo" aria-label="Redo">↷</button><button class="share-button" id="share-button">Share</button><button class="export-button" id="export-button">Export HTML <span>↗</span></button></div>
     </header>
 
     <main class="workspace">
@@ -25,9 +26,8 @@
           <button class="layer" data-section="quote"><span class="drag">⠿</span><span class="layer-icon">❞</span><span>Testimonial</span><span class="eye">◉</span></button>
           <button class="layer" data-section="footer"><span class="drag">⠿</span><span class="layer-icon">—</span><span>Footer</span><span class="eye">◉</span></button>
         </nav>
-        <div class="side-heading pages-heading"><span>PAGES</span><button aria-label="Add page">+</button></div>
-        <div class="page active-page"><span>⌂</span> Home <span class="dots">•••</span></div>
-        <div class="page"><span>◇</span> About</div>
+        <div class="side-heading pages-heading"><span>PAGES</span><button id="add-page" aria-label="Add page">+</button></div>
+        <div id="pages-list"><div class="page active-page"><span>⌂</span> Home <span class="dots">•••</span></div><div class="page"><span>◇</span> About</div></div>
         <div class="sidebar-footer"><button id="save-template">♡ Save as template</button><p>Changes saved automatically</p></div>
       </aside>
 
@@ -52,7 +52,8 @@
         <button class="delete-button" id="delete-section">⌫ Delete section</button>
       </aside>
     </main>
-    <div class="toast" id="toast">HTML export downloaded</div>
+    <div class="element-picker" id="element-picker" aria-hidden="true"><div class="picker-card" role="dialog" aria-modal="true" aria-labelledby="picker-title"><div class="picker-heading"><div><p>ADD TO PAGE</p><h2 id="picker-title">Choose an element</h2></div><button id="close-picker" aria-label="Close add elements">×</button></div><div class="element-options"><button data-element="text"><span class="element-icon">T</span><b>Text block</b><small>Add a heading and paragraph</small></button><button data-element="button"><span class="element-icon">↗</span><b>Call to action</b><small>Add a clickable button</small></button><button data-element="image"><span class="element-icon">▧</span><b>Image card</b><small>Add a visual content card</small></button><button data-element="divider"><span class="element-icon">—</span><b>Divider</b><small>Separate page content</small></button></div></div></div>
+    <div class="toast" id="toast" role="status">HTML export downloaded</div>
     <script src="app.js"></script>
   </body>
 </html>
